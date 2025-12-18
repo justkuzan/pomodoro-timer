@@ -1,0 +1,13 @@
+This is where we store and manage scenes.
+Each scene can have its own set of scene elements:
+	Custom sounds
+	Custom tilesets
+	Custom art
+	Custom effects
+	Custom resourses (tres)
+	And so on
+
+Tilesets can be stored for all scenes in a separate "Tilesets" folder,
+rather than in each scene's folder, if that's more convenient.
+
+It's recommended to create a base scene in the root of this folder that can be reused for other scenes.

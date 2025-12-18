@@ -1,0 +1,3 @@
+Contains assets common to the entire game:
+	Sound themes (not specific to a level, but, for example, the in-game intro),
+	fonts, cursors, and other items that apply globally to the external portion of the game.
