@@ -76,6 +76,6 @@ texture_normal = ExtResource("6_t344s")
 
 [connection signal="pressed" from="add_reduce_V/add_reduce_H/reduce_minutes" to="." method="_on_reduce_minutes_pressed"]
 [connection signal="pressed" from="add_reduce_V/add_reduce_H/add_minutes" to="." method="_on_add_minutes_pressed"]
-[connection signal="pressed" from="play_pause_stop_V/play_pause_stop_H/play_pause/pause" to="." method="_on_add_minutes_pressed"]
-[connection signal="pressed" from="play_pause_stop_V/play_pause_stop_H/play_pause/play" to="." method="_on_reduce_minutes_pressed"]
-[connection signal="pressed" from="play_pause_stop_V/play_pause_stop_H/stop/stop" to="." method="_on_add_minutes_pressed"]
+[connection signal="pressed" from="play_pause_stop_V/play_pause_stop_H/play_pause/pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="play_pause_stop_V/play_pause_stop_H/play_pause/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="play_pause_stop_V/play_pause_stop_H/stop/stop" to="." method="_on_stop_pressed"]

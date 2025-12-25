@@ -13,3 +13,7 @@ position = Vector2(960, 145)
 [node name="timer_controls" parent="." instance=ExtResource("3_bmei0")]
 offset_left = 960.0
 offset_right = 960.0
+
+[connection signal="paused" from="timer_controls" to="." method="_on_timer_controls_paused"]
+[connection signal="running" from="timer_controls" to="." method="_on_timer_controls_running"]
+[connection signal="stopped" from="timer_controls" to="." method="_on_timer_controls_stopped"]
