@@ -8,8 +8,9 @@ var timer_seconds_set: int = 5
 var minutes: int = 0
 var seconds: int = 0
 
+signal timer_finished
+
 func _ready() -> void:
-	timer.start()
 	seconds = timer_seconds_set
 	minutes = timer_minutes_set
 	print("Timer is started")
@@ -21,6 +22,7 @@ func _on_work_timer_timeout() -> void:
 	
 	if minutes <= 0 and seconds <= 0:
 		print("Timer is ended")
+		emit_signal("timer_finished")
 		timer.stop()
 		return
 		

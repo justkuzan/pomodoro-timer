@@ -14,6 +14,7 @@ position = Vector2(960, 145)
 offset_left = 960.0
 offset_right = 960.0
 
+[connection signal="timer_finished" from="work_timer_scene" to="." method="_on_work_timer_scene_timer_finished"]
 [connection signal="paused" from="timer_controls" to="." method="_on_timer_controls_paused"]
 [connection signal="running" from="timer_controls" to="." method="_on_timer_controls_running"]
 [connection signal="stopped" from="timer_controls" to="." method="_on_timer_controls_stopped"]
