@@ -1,2 +1,0 @@
-Things that are responsible for the game globally, but are not directly related to game objects:
-	Global time, Machine state, Scripts for supporting resolutions on different screens, and so on.

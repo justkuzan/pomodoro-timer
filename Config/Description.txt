@@ -1,6 +1,0 @@
-A script for game settings that the player can customize (and we set by default):
-	Sound volume
-	Screen resolution selection
-	Language selection
-	Load and save functions
-	And so on

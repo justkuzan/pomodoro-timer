@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dggwqim5r4htw"]
+
+[ext_resource type="Script" uid="uid://dg7rh3d4xlwks" path="res://UI/timer_controls.gd" id="1_5s0ss"]
+[ext_resource type="Texture2D" uid="uid://d4kdjapyxf1lk" path="res://UI/Timer Controls/add.png" id="2_o4kh1"]
+[ext_resource type="Texture2D" uid="uid://1h3anq16walv" path="res://UI/Timer Controls/reduce.png" id="3_o4kh1"]
+
+[node name="timer_controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5s0ss")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 88.0
+offset_bottom = 188.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 379
+
+[node name="reduce_minutes" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_o4kh1")
+
+[node name="add_minutes" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_o4kh1")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/reduce_minutes" to="." method="_on_reduce_minutes_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/add_minutes" to="." method="_on_add_minutes_pressed"]

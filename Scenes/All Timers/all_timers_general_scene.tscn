@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://v3cn8qd7goio"]
+
+[ext_resource type="Script" uid="uid://dnunrcd4blrq1" path="res://Scenes/All Timers/all_timers_general_scene.gd" id="1_teiy2"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_teiy2")
