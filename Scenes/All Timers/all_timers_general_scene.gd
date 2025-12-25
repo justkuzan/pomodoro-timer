@@ -1,11 +1,14 @@
 extends Node2D
 
+@onready var work_timer_scene: Node2D = $work_timer_scene
+@onready var timer_controls: Control = $timer_controls
 
-# Called when the node enters the scene tree for the first time.
+#var play_button : Button = 
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

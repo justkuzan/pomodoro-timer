@@ -1,38 +1,81 @@
-[gd_scene load_steps=4 format=3 uid="uid://dggwqim5r4htw"]
+[gd_scene load_steps=7 format=3 uid="uid://dggwqim5r4htw"]
 
 [ext_resource type="Script" uid="uid://dg7rh3d4xlwks" path="res://UI/timer_controls.gd" id="1_5s0ss"]
 [ext_resource type="Texture2D" uid="uid://d4kdjapyxf1lk" path="res://UI/Timer Controls/add.png" id="2_o4kh1"]
 [ext_resource type="Texture2D" uid="uid://1h3anq16walv" path="res://UI/Timer Controls/reduce.png" id="3_o4kh1"]
+[ext_resource type="Texture2D" uid="uid://cs8xoiub3yq4h" path="res://UI/Timer Controls/pause.png" id="4_og1yg"]
+[ext_resource type="Texture2D" uid="uid://c5sy77r11oqys" path="res://UI/Timer Controls/play.png" id="5_t344s"]
+[ext_resource type="Texture2D" uid="uid://dvjlethgq2357" path="res://UI/Timer Controls/stop.png" id="6_t344s"]
 
 [node name="timer_controls" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
 grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_5s0ss")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="add_reduce_V" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 88.0
 offset_bottom = 188.0
 grow_horizontal = 2
+theme_override_constants/separation = 32
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="add_reduce_H" type="HBoxContainer" parent="add_reduce_V"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 379
 
-[node name="reduce_minutes" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+[node name="reduce_minutes" type="TextureButton" parent="add_reduce_V/add_reduce_H"]
 layout_mode = 2
 texture_normal = ExtResource("3_o4kh1")
 
-[node name="add_minutes" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+[node name="add_minutes" type="TextureButton" parent="add_reduce_V/add_reduce_H"]
 layout_mode = 2
 texture_normal = ExtResource("2_o4kh1")
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/reduce_minutes" to="." method="_on_reduce_minutes_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/add_minutes" to="." method="_on_add_minutes_pressed"]
+[node name="play_pause_stop_V" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = 280.0
+offset_right = 154.0
+offset_bottom = 380.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="play_pause_stop_H" type="HBoxContainer" parent="play_pause_stop_V"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="play_pause" type="HBoxContainer" parent="play_pause_stop_V/play_pause_stop_H"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="pause" type="TextureButton" parent="play_pause_stop_V/play_pause_stop_H/play_pause"]
+layout_mode = 2
+texture_normal = ExtResource("4_og1yg")
+
+[node name="play" type="TextureButton" parent="play_pause_stop_V/play_pause_stop_H/play_pause"]
+layout_mode = 2
+texture_normal = ExtResource("5_t344s")
+
+[node name="stop" type="HBoxContainer" parent="play_pause_stop_V/play_pause_stop_H"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="stop" type="TextureButton" parent="play_pause_stop_V/play_pause_stop_H/stop"]
+layout_mode = 2
+texture_normal = ExtResource("6_t344s")
+
+[connection signal="pressed" from="add_reduce_V/add_reduce_H/reduce_minutes" to="." method="_on_reduce_minutes_pressed"]
+[connection signal="pressed" from="add_reduce_V/add_reduce_H/add_minutes" to="." method="_on_add_minutes_pressed"]
+[connection signal="pressed" from="play_pause_stop_V/play_pause_stop_H/play_pause/pause" to="." method="_on_add_minutes_pressed"]
+[connection signal="pressed" from="play_pause_stop_V/play_pause_stop_H/play_pause/play" to="." method="_on_reduce_minutes_pressed"]
+[connection signal="pressed" from="play_pause_stop_V/play_pause_stop_H/stop/stop" to="." method="_on_add_minutes_pressed"]

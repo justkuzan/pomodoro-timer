@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="PomodoroTimer"
-run/main_scene="uid://c32tu8ja2dd0m"
+run/main_scene="uid://v3cn8qd7goio"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://cj2wkbeiptohj"
 
 [debug]
 

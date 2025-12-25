@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://v3cn8qd7goio"]
+[gd_scene load_steps=4 format=3 uid="uid://v3cn8qd7goio"]
 
 [ext_resource type="Script" uid="uid://dnunrcd4blrq1" path="res://Scenes/All Timers/all_timers_general_scene.gd" id="1_teiy2"]
+[ext_resource type="PackedScene" uid="uid://c32tu8ja2dd0m" path="res://Scenes/Work Timer/work_timer_scene.tscn" id="2_bmei0"]
+[ext_resource type="PackedScene" uid="uid://dggwqim5r4htw" path="res://UI/timer_controls.tscn" id="3_bmei0"]
 
-[node name="Node2D" type="Node2D"]
+[node name="all_timers_general_scene" type="Node2D"]
 script = ExtResource("1_teiy2")
+
+[node name="work_timer_scene" parent="." instance=ExtResource("2_bmei0")]
+position = Vector2(960, 145)
+
+[node name="timer_controls" parent="." instance=ExtResource("3_bmei0")]
+offset_left = 960.0
+offset_right = 960.0
