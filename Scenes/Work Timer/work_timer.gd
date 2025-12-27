@@ -3,19 +3,35 @@ extends Node2D
 @onready var timer: Timer = $work_timer
 @onready var time_counter: Label = $time_counter
 
-var timer_minutes_set: int = 1
-var timer_seconds_set: int = 5
-var minutes: int = 0
-var seconds: int = 0
+var minutes: int
+var seconds: int
 
 signal timer_finished
 
 func _ready() -> void:
-	seconds = timer_seconds_set
-	minutes = timer_minutes_set
+	set_time()
 	print("Timer is started")
 	pass
-
+	
+	
+func set_time(set_minutes: int = 25, set_seconds: int = 0) -> void:
+	minutes = set_minutes
+	seconds = set_seconds
+	time_counter.text = "%02d:%02d" % [minutes, seconds]
+	
+	
+func timer_started() -> void:
+	timer.start()
+	
+	
+func timer_stopped() -> void:
+	timer.stop()
+	
+	
+func timer_paused() -> void:
+	timer.stop()
+	
+	
 func _on_work_timer_timeout() -> void:
 	print("1 second has passed")
 	time_counter.text = "%02d:%02d" % [minutes, seconds]
@@ -23,7 +39,7 @@ func _on_work_timer_timeout() -> void:
 	if minutes <= 0 and seconds <= 0:
 		print("Timer is ended")
 		emit_signal("timer_finished")
-		timer.stop()
+		timer_stopped()
 		return
 		
 	if seconds > 0:
