@@ -29,13 +29,16 @@ func change_state(new_state: State) -> void:
 		State.RUNNING:
 			print("Плей нажат!")
 			work_timer.timer_started()
+			timer_controls.ui_running()
 		State.STOPPED:
 			print("Стоп нажат!")
 			work_timer.timer_stopped()
+			timer_controls.ui_stopped()
 			work_timer.set_time(user_minutes, user_seconds)
 		State.PAUSED:
 			print("Пауза нажата!")
 			work_timer.timer_paused()
+			timer_controls.ui_paused()
 		State.ENDED:
 			print("Время и стекло")
 	
