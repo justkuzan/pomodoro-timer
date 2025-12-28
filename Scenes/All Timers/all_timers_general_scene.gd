@@ -6,8 +6,8 @@ extends Node2D
 enum State { STOPPED, RUNNING, PAUSED, ENDED }
 var state: State = State.STOPPED
 
-var user_minutes: int = 12
-var user_seconds: int = 20
+var user_minutes: int = 1
+var user_seconds: int = 25
 
 
 func _ready() -> void:
@@ -16,7 +16,15 @@ func _ready() -> void:
 	
 	
 func change_state(new_state: State) -> void:
+	if state == new_state:
+		return
+	if  state == State.STOPPED and new_state == State.PAUSED:
+		return
+	if (state == State.ENDED) and (new_state == State.PAUSED or new_state == State.STOPPED):
+		return
+	
 	state = new_state
+	
 	match state:
 		State.RUNNING:
 			print("Плей нажат!")
@@ -30,7 +38,7 @@ func change_state(new_state: State) -> void:
 			work_timer.timer_paused()
 		State.ENDED:
 			print("Время и стекло")
-			
+	
 	
 func set_time_in_timer() -> void:
 	work_timer.set_time(user_minutes, user_seconds)
