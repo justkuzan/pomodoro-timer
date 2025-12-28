@@ -7,25 +7,48 @@ signal paused
 @onready var play_button: TextureButton = $play_pause_stop_V/play_pause_stop_H/play_pause/play
 @onready var pause_button: TextureButton = $play_pause_stop_V/play_pause_stop_H/play_pause/pause
 @onready var stop_button: TextureButton = $play_pause_stop_V/play_pause_stop_H/stop/stop
+@onready var add_minutes_button: TextureButton = $add_reduce_V/add_reduce_H/add_minutes
+@onready var reduce_minutes_button: TextureButton = $add_reduce_V/add_reduce_H/reduce_minutes
 
 
 func _ready() -> void:
 	pass
 	
 	
+func ui_onloaded() -> void:
+	play_button.show()
+	pause_button.hide()
+	stop_button.hide()
+	add_minutes_button.show()
+	reduce_minutes_button.show()
+	
+	
 func ui_running() -> void:
 	play_button.hide()
 	pause_button.show()
+	add_minutes_button.hide()
+	reduce_minutes_button.hide()
 	
 	
 func ui_paused() -> void:
 	play_button.show()
 	pause_button.hide()
+	add_minutes_button.hide()
+	reduce_minutes_button.hide()
 	
 	
 func ui_stopped() -> void:
 	play_button.show()
 	pause_button.hide()
+	add_minutes_button.show()
+	reduce_minutes_button.show()
+	
+	
+func ui_ended() -> void:
+	play_button.show()
+	pause_button.hide()
+	add_minutes_button.show()
+	reduce_minutes_button.show()
 	
 	
 func _on_reduce_minutes_pressed() -> void:

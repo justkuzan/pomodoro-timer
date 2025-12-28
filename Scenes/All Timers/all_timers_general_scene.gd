@@ -3,14 +3,15 @@ extends Node2D
 @onready var work_timer: Node2D = $work_timer_scene
 @onready var timer_controls: Control = $timer_controls
 
-enum State { STOPPED, RUNNING, PAUSED, ENDED }
+enum State { ONLOADED, STOPPED, RUNNING, PAUSED, ENDED }
 var state: State = State.STOPPED
 
-var user_minutes: int = 1
-var user_seconds: int = 25
+var user_minutes: int = 0
+var user_seconds: int = 5
 
 
 func _ready() -> void:
+	change_state(State.ONLOADED)
 	set_time_in_timer()
 	pass
 	
@@ -41,6 +42,10 @@ func change_state(new_state: State) -> void:
 			timer_controls.ui_paused()
 		State.ENDED:
 			print("Время и стекло")
+			timer_controls.ui_ended()
+			work_timer.set_time(user_minutes, user_seconds)
+		State.ONLOADED:
+			timer_controls.ui_onloaded()
 	
 	
 func set_time_in_timer() -> void:
