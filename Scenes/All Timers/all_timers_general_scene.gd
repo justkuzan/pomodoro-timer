@@ -6,8 +6,9 @@ extends Node2D
 enum State { ONLOADED, STOPPED, RUNNING, PAUSED, ENDED }
 var state: State = State.STOPPED
 
-var user_minutes: int = 0
-var user_seconds: int = 5
+
+var user_minutes: int = 25
+var user_seconds: int = 0
 
 
 func _ready() -> void:
@@ -52,6 +53,9 @@ func set_time_in_timer() -> void:
 	work_timer.set_time(user_minutes, user_seconds)
 	pass
 	
+#func manage_time(minutes: int) -> int:
+	#if _on_timer_controls_minutes_added()
+	#return minutes
 	
 func _on_timer_controls_running() -> void:
 	change_state(State.RUNNING)
@@ -67,3 +71,17 @@ func _on_timer_controls_paused() -> void:
 	
 func _on_work_timer_scene_timer_finished() -> void:
 	change_state(State.ENDED)
+
+
+func _on_timer_controls_minutes_added() -> void:
+	if user_minutes >= 55:
+		return
+	user_minutes += 5
+	set_time_in_timer()
+
+
+func _on_timer_controls_minutes_reduced() -> void:
+	if user_minutes <= 5:
+		return
+	user_minutes -= 5
+	set_time_in_timer()
