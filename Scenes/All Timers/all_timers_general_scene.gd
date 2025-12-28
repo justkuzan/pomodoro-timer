@@ -3,6 +3,8 @@ extends Node2D
 @onready var work_timer: Node2D = $work_timer_scene
 @onready var timer_controls: Control = $timer_controls
 
+var config := preload("res://config.gd").new()
+
 enum State { ONLOADED, STOPPED, RUNNING, PAUSED, ENDED }
 var state: State = State.STOPPED
 
@@ -13,7 +15,6 @@ var user_seconds: int = 0
 
 func _ready() -> void:
 	change_state(State.ONLOADED)
-	set_time_in_timer()
 	pass
 	
 	
@@ -32,30 +33,37 @@ func change_state(new_state: State) -> void:
 			print("Плей нажат!")
 			work_timer.timer_started()
 			timer_controls.ui_running()
+		
 		State.STOPPED:
 			print("Стоп нажат!")
 			work_timer.timer_stopped()
 			timer_controls.ui_stopped()
-			work_timer.set_time(user_minutes, user_seconds)
+			set_time_in_timer()
+		
 		State.PAUSED:
 			print("Пауза нажата!")
 			work_timer.timer_paused()
 			timer_controls.ui_paused()
+		
 		State.ENDED:
 			print("Время и стекло")
 			timer_controls.ui_ended()
-			work_timer.set_time(user_minutes, user_seconds)
+			set_time_in_timer()
+		
 		State.ONLOADED:
 			timer_controls.ui_onloaded()
+			var err := config.load("user://config.cfg")
+			if err != OK:
+				print("Config file not found")
+			user_minutes = config.get_minutes()
+			user_seconds = config.get_seconds()
+			set_time_in_timer()
 	
 	
 func set_time_in_timer() -> void:
 	work_timer.set_time(user_minutes, user_seconds)
 	pass
 	
-#func manage_time(minutes: int) -> int:
-	#if _on_timer_controls_minutes_added()
-	#return minutes
 	
 func _on_timer_controls_running() -> void:
 	change_state(State.RUNNING)
@@ -78,6 +86,7 @@ func _on_timer_controls_minutes_added() -> void:
 		return
 	user_minutes += 5
 	set_time_in_timer()
+	config.save_time(user_minutes, user_seconds)
 
 
 func _on_timer_controls_minutes_reduced() -> void:
@@ -85,3 +94,4 @@ func _on_timer_controls_minutes_reduced() -> void:
 		return
 	user_minutes -= 5
 	set_time_in_timer()
+	config.save_time(user_minutes, user_seconds)
