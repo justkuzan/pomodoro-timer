@@ -1,14 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://dggwqim5r4htw"]
+[gd_scene load_steps=17 format=3 uid="uid://dggwqim5r4htw"]
 
 [ext_resource type="Script" uid="uid://dg7rh3d4xlwks" path="res://UI/timer_controls.gd" id="1_5s0ss"]
-[ext_resource type="Texture2D" uid="uid://d4kdjapyxf1lk" path="res://UI/Timer Controls/add.png" id="2_o4kh1"]
-[ext_resource type="Texture2D" uid="uid://1h3anq16walv" path="res://UI/Timer Controls/reduce.png" id="3_o4kh1"]
+[ext_resource type="Texture2D" uid="uid://cl7uxq548wph1" path="res://UI/HUD/button-reduce/reduce-default.png" id="2_axwln"]
+[ext_resource type="Texture2D" uid="uid://d28nh0svhm20s" path="res://UI/HUD/button-reduce/reduce-pressed.png" id="3_r144j"]
 [ext_resource type="Texture2D" uid="uid://catdm2018fo4q" path="res://UI/HUD/button-pause/pause-default.png" id="4_av14r"]
+[ext_resource type="Texture2D" uid="uid://cirfj64g8qs6n" path="res://UI/HUD/button-reduce/reduce-hovered.png" id="4_b1r6t"]
 [ext_resource type="Texture2D" uid="uid://0wo7sc8yquc7" path="res://UI/HUD/button-play/play-default.png" id="5_8a722"]
+[ext_resource type="Texture2D" uid="uid://bxsxuay2fkwty" path="res://UI/HUD/button-add/add-default.png" id="5_da5n5"]
 [ext_resource type="Texture2D" uid="uid://cfgh5x27r4wnx" path="res://UI/HUD/button-pause/pause-pressed.png" id="5_vq7i4"]
 [ext_resource type="Texture2D" uid="uid://depro5ge4o6bj" path="res://UI/HUD/button-play/play-pressed.png" id="6_fv4x6"]
+[ext_resource type="Texture2D" uid="uid://85m78wq22p0r" path="res://UI/HUD/button-add/add-pressed.png" id="6_tkte1"]
 [ext_resource type="Texture2D" uid="uid://cbiqtorxxpwl5" path="res://UI/HUD/button-pause/pause-hovered.png" id="6_y8ejd"]
 [ext_resource type="Texture2D" uid="uid://bxq56k7hhg8fa" path="res://UI/HUD/button-play/play-hovered.png" id="7_o361q"]
+[ext_resource type="Texture2D" uid="uid://wwgt2jwgupu3" path="res://UI/HUD/button-add/add-hovered.png" id="7_pm2wv"]
 [ext_resource type="Texture2D" uid="uid://csk3kerxtmr6y" path="res://UI/HUD/button-stop/stop-default.png" id="8_o361q"]
 [ext_resource type="Texture2D" uid="uid://cf7xi6xrk315g" path="res://UI/HUD/button-stop/stop-pressed.png" id="9_ihn6g"]
 [ext_resource type="Texture2D" uid="uid://dt3vbjhqwvq3a" path="res://UI/HUD/button-stop/stop-hovered.png" id="10_av14r"]
@@ -25,8 +29,10 @@ script = ExtResource("1_5s0ss")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 88.0
-offset_bottom = 188.0
+offset_left = -289.5
+offset_top = 94.0
+offset_right = 289.5
+offset_bottom = 194.0
 grow_horizontal = 2
 theme_override_constants/separation = 32
 
@@ -36,12 +42,20 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 379
 
 [node name="reduce_minutes" type="TextureButton" parent="add_reduce_V/add_reduce_H"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture_normal = ExtResource("3_o4kh1")
+texture_normal = ExtResource("2_axwln")
+texture_pressed = ExtResource("3_r144j")
+texture_hover = ExtResource("4_b1r6t")
+stretch_mode = 0
 
 [node name="add_minutes" type="TextureButton" parent="add_reduce_V/add_reduce_H"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture_normal = ExtResource("2_o4kh1")
+texture_normal = ExtResource("5_da5n5")
+texture_pressed = ExtResource("6_tkte1")
+texture_hover = ExtResource("7_pm2wv")
+stretch_mode = 0
 
 [node name="play_pause_stop_V" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -50,9 +64,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -154.0
-offset_top = 255.0
+offset_top = 236.0
 offset_right = 154.0
-offset_bottom = 354.99997
+offset_bottom = 336.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -65,26 +79,32 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="pause" type="TextureButton" parent="play_pause_stop_V/play_pause_stop_H/play_pause"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("4_av14r")
 texture_pressed = ExtResource("5_vq7i4")
 texture_hover = ExtResource("6_y8ejd")
+stretch_mode = 0
 
 [node name="play" type="TextureButton" parent="play_pause_stop_V/play_pause_stop_H/play_pause"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("5_8a722")
 texture_pressed = ExtResource("6_fv4x6")
 texture_hover = ExtResource("7_o361q")
+stretch_mode = 0
 
 [node name="stop" type="HBoxContainer" parent="play_pause_stop_V/play_pause_stop_H"]
 layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="stop" type="TextureButton" parent="play_pause_stop_V/play_pause_stop_H/stop"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("8_o361q")
 texture_pressed = ExtResource("9_ihn6g")
 texture_hover = ExtResource("10_av14r")
+stretch_mode = 0
 
 [connection signal="pressed" from="add_reduce_V/add_reduce_H/reduce_minutes" to="." method="_on_reduce_minutes_pressed"]
 [connection signal="pressed" from="add_reduce_V/add_reduce_H/add_minutes" to="." method="_on_add_minutes_pressed"]
