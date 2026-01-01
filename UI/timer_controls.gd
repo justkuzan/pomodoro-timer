@@ -15,7 +15,27 @@ signal minutes_reduced
 
 
 func _ready() -> void:
-	pass
+	# Collect all buttons into an array for batch setup
+	var all_buttons: Array = [
+		play_button, 
+		pause_button, 
+		stop_button, 
+		add_minutes_button, 
+		reduce_minutes_button
+	]
+	
+	
+	for btn: TextureButton in all_buttons:
+		btn.button_down.connect(play_click_down)
+		btn.button_up.connect(play_click_up)
+		
+		
+func play_click_down() -> void:
+	SoundManager.play_track(SoundManager.AUDIO_TRACKS.ui_button_pressed)
+	
+	
+func play_click_up() -> void:
+	SoundManager.play_track(SoundManager.AUDIO_TRACKS.ui_button_released)
 	
 	
 func ui_onloaded() -> void:

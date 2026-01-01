@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://doj632328jtfu"]
+
+[ext_resource type="Script" uid="uid://chn42vboa450r" path="res://Utilities/SoundManager/sound_manager.gd" id="1_j3to0"]
+
+[node name="SoundManager" type="AudioStreamPlayer"]
+max_polyphony = 4
+script = ExtResource("1_j3to0")

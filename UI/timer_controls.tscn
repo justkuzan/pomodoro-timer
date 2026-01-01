@@ -29,10 +29,10 @@ script = ExtResource("1_5s0ss")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -289.5
-offset_top = 94.0
-offset_right = 289.5
-offset_bottom = 194.0
+offset_left = -309.5
+offset_top = 86.0
+offset_right = 309.5
+offset_bottom = 206.0
 grow_horizontal = 2
 theme_override_constants/separation = 32
 
@@ -42,7 +42,7 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 379
 
 [node name="reduce_minutes" type="TextureButton" parent="add_reduce_V/add_reduce_H"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 texture_normal = ExtResource("2_axwln")
 texture_pressed = ExtResource("3_r144j")
@@ -50,7 +50,7 @@ texture_hover = ExtResource("4_b1r6t")
 stretch_mode = 0
 
 [node name="add_minutes" type="TextureButton" parent="add_reduce_V/add_reduce_H"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 texture_normal = ExtResource("5_da5n5")
 texture_pressed = ExtResource("6_tkte1")
@@ -79,7 +79,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="pause" type="TextureButton" parent="play_pause_stop_V/play_pause_stop_H/play_pause"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 texture_normal = ExtResource("4_av14r")
 texture_pressed = ExtResource("5_vq7i4")
@@ -87,7 +87,7 @@ texture_hover = ExtResource("6_y8ejd")
 stretch_mode = 0
 
 [node name="play" type="TextureButton" parent="play_pause_stop_V/play_pause_stop_H/play_pause"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 texture_normal = ExtResource("5_8a722")
 texture_pressed = ExtResource("6_fv4x6")
@@ -99,7 +99,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="stop" type="TextureButton" parent="play_pause_stop_V/play_pause_stop_H/stop"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 texture_normal = ExtResource("8_o361q")
 texture_pressed = ExtResource("9_ihn6g")
