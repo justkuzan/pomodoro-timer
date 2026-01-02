@@ -15,6 +15,12 @@ var user_seconds: int = 0
 
 func _ready() -> void:
 	change_state(State.ONLOADED)
+	
+	#window setting (need to be in Main scene)
+	if not Engine.is_editor_hint():
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		
+		
 	pass
 	
 	
