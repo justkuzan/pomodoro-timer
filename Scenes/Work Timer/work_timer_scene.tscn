@@ -5,9 +5,9 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_g32yk"]
 font_size = 160
-font_color = Color(0.972549, 0.99215686, 1, 1)
+font_color = Color(0.9843137, 1, 0.9137255, 1)
 shadow_size = 0
-shadow_color = Color(0.15686275, 0.27058825, 0.43137255, 0.84705883)
+shadow_color = Color(0.05882353, 0.3529412, 0.46666667, 0.7490196)
 shadow_offset = Vector2(0, 5)
 
 [node name="work_timer_scene" type="Node2D"]

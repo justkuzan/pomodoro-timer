@@ -33,6 +33,7 @@ window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://88h43j7623ho"
 
 [rendering]
 
