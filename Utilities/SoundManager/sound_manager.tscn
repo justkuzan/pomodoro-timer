@@ -4,4 +4,5 @@
 
 [node name="SoundManager" type="AudioStreamPlayer"]
 max_polyphony = 4
+bus = &"UI"
 script = ExtResource("1_j3to0")

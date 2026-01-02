@@ -10,7 +10,6 @@ signal timer_finished
 
 func _ready() -> void:
 	set_time()
-	pass
 	
 	
 func set_time(set_minutes: int = 25, set_seconds: int = 0) -> void:
@@ -25,6 +24,7 @@ func timer_onloaded() -> void:
 	
 func timer_started() -> void:
 	timer.start()
+	trigger_timeout()
 	
 	
 func timer_stopped() -> void:
@@ -36,8 +36,11 @@ func timer_paused() -> void:
 	
 	
 func _on_work_timer_timeout() -> void:
+	trigger_timeout()
+	
+	
+func trigger_timeout() -> void:
 	print("1 second has passed")
-	time_counter.text = "%02d:%02d" % [minutes, seconds]
 	
 	if minutes <= 0 and seconds <= 0:
 		emit_signal("timer_finished")
@@ -50,3 +53,5 @@ func _on_work_timer_timeout() -> void:
 	elif seconds == 0 and minutes > 0:
 		minutes -= 1
 		seconds = 59
+	
+	time_counter.text = "%02d:%02d" % [minutes, seconds]

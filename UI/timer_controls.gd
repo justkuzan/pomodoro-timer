@@ -28,8 +28,8 @@ func _ready() -> void:
 	for btn: TextureButton in all_buttons:
 		btn.button_down.connect(play_click_down)
 		btn.button_up.connect(play_click_up)
-		
-		
+	
+	
 func play_click_down() -> void:
 	SoundManager.play_track(SoundManager.AUDIO_TRACKS.ui_button_pressed)
 	

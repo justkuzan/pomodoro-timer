@@ -79,19 +79,21 @@ func _on_timer_controls_paused() -> void:
 	
 func _on_work_timer_scene_timer_finished() -> void:
 	change_state(State.ENDED)
-
-
+	
+	
 func _on_timer_controls_minutes_added() -> void:
 	if user_minutes >= 55:
 		return
 	user_minutes += 5
 	set_time_in_timer()
 	config.save_time(user_minutes, user_seconds)
-
-
+	
+	
 func _on_timer_controls_minutes_reduced() -> void:
 	if user_minutes <= 5:
 		return
 	user_minutes -= 5
 	set_time_in_timer()
 	config.save_time(user_minutes, user_seconds)
+	
+	
