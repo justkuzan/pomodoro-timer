@@ -1,5 +1,11 @@
 extends Node2D
 
+signal onloaded
+signal stopped
+signal running
+signal paused
+signal ended
+
 @onready var work_timer: Node2D = $work_timer_scene
 @onready var timer_controls: Control = $timer_controls
 
@@ -19,9 +25,6 @@ func _ready() -> void:
 	#window setting (need to be in Main scene)
 	if not Engine.is_editor_hint():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		
-		
-	pass
 	
 	
 func change_state(new_state: State) -> void:
@@ -39,22 +42,26 @@ func change_state(new_state: State) -> void:
 			print("Плей нажат!")
 			work_timer.timer_started()
 			timer_controls.ui_running()
+			emit_signal("running")
 		
 		State.STOPPED:
 			print("Стоп нажат!")
 			work_timer.timer_stopped()
 			timer_controls.ui_stopped()
 			set_time_in_timer()
+			emit_signal("stopped")
 		
 		State.PAUSED:
 			print("Пауза нажата!")
 			work_timer.timer_paused()
 			timer_controls.ui_paused()
+			emit_signal("paused")
 		
 		State.ENDED:
 			print("Время и стекло")
 			timer_controls.ui_ended()
 			set_time_in_timer()
+			emit_signal("ended")
 		
 		State.ONLOADED:
 			timer_controls.ui_onloaded()
@@ -64,6 +71,7 @@ func change_state(new_state: State) -> void:
 			user_minutes = config.get_minutes()
 			user_seconds = config.get_seconds()
 			set_time_in_timer()
+			emit_signal("onloaded")
 	
 	
 func set_time_in_timer() -> void:

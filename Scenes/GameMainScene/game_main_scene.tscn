@@ -12,3 +12,9 @@ position = Vector2(960, 540)
 scale = Vector2(3.4, 3.4)
 
 [node name="all_timers_general_scene" parent="." instance=ExtResource("2_4pb6x")]
+
+[connection signal="ended" from="all_timers_general_scene" to="." method="_on_all_timers_general_scene_ended"]
+[connection signal="onloaded" from="all_timers_general_scene" to="." method="_on_all_timers_general_scene_onloaded"]
+[connection signal="paused" from="all_timers_general_scene" to="." method="_on_all_timers_general_scene_paused"]
+[connection signal="running" from="all_timers_general_scene" to="." method="_on_all_timers_general_scene_running"]
+[connection signal="stopped" from="all_timers_general_scene" to="." method="_on_all_timers_general_scene_stopped"]

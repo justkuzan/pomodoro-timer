@@ -1,35 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://b85ihm0oy3voe"]
+[gd_scene load_steps=6 format=3 uid="uid://b85ihm0oy3voe"]
 
 [ext_resource type="Texture2D" uid="uid://cym5w87gkprh4" path="res://Scenes/ParallaxBackground/Graphics/1.png" id="1_638og"]
+[ext_resource type="Script" uid="uid://48gu3rcevprk" path="res://Scenes/ParallaxBackground/parallax_background.gd" id="1_ysq2o"]
 [ext_resource type="Texture2D" uid="uid://bpuhhjqds2o1k" path="res://Scenes/ParallaxBackground/Graphics/2.png" id="2_ysq2o"]
 [ext_resource type="Texture2D" uid="uid://brcfq4ipqs6sf" path="res://Scenes/ParallaxBackground/Graphics/3.png" id="3_e5yxc"]
 [ext_resource type="Texture2D" uid="uid://lvu0vrgl47w5" path="res://Scenes/ParallaxBackground/Graphics/4.png" id="4_fo3ui"]
 
 [node name="parallax_background" type="Node2D"]
+script = ExtResource("1_ysq2o")
 
-[node name="1_sky" type="Parallax2D" parent="."]
+[node name="parallax1" type="Parallax2D" parent="."]
 repeat_size = Vector2(576, 0)
 
-[node name="1_sky" type="Sprite2D" parent="1_sky"]
+[node name="1_sky" type="Sprite2D" parent="parallax1"]
 texture = ExtResource("1_638og")
 
-[node name="2_clouds" type="Parallax2D" parent="."]
+[node name="parallax2" type="Parallax2D" parent="."]
 repeat_size = Vector2(576, 0)
-autoscroll = Vector2(-10, 0)
 
-[node name="2_clouds" type="Sprite2D" parent="2_clouds"]
+[node name="2_clouds" type="Sprite2D" parent="parallax2"]
 texture = ExtResource("2_ysq2o")
 
-[node name="3_far_trees" type="Parallax2D" parent="."]
+[node name="parallax3" type="Parallax2D" parent="."]
 repeat_size = Vector2(576, 0)
-autoscroll = Vector2(-50, 0)
 
-[node name="3_far_trees" type="Sprite2D" parent="3_far_trees"]
+[node name="3_far_trees" type="Sprite2D" parent="parallax3"]
 texture = ExtResource("3_e5yxc")
 
-[node name="4_near_trees" type="Parallax2D" parent="."]
+[node name="parallax4" type="Parallax2D" parent="."]
 repeat_size = Vector2(576, 0)
-autoscroll = Vector2(-130, 0)
 
-[node name="4_near_trees2" type="Sprite2D" parent="4_near_trees"]
+[node name="4_near_trees2" type="Sprite2D" parent="parallax4"]
 texture = ExtResource("4_fo3ui")
