@@ -13,16 +13,16 @@ func _on_all_timers_general_scene_running() -> void:
 
 
 func _on_all_timers_general_scene_paused() -> void:
-	pass # Replace with function body.
+	parallax_background.stop()
 
 
 func _on_all_timers_general_scene_stopped() -> void:
-	pass # Replace with function body.
+	parallax_background.stop()
 
 
 func _on_all_timers_general_scene_onloaded() -> void:
-	pass # Replace with function body.
+	pass
 
 
 func _on_all_timers_general_scene_ended() -> void:
-	pass # Replace with function body.
+	parallax_background.stop()

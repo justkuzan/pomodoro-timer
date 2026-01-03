@@ -6,36 +6,50 @@ extends Node2D
 @onready var parallax_4: Parallax2D = $parallax4
 
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 	
 	
-#func _process(delta: float) -> void:
-	#pass
+func start() -> void:
+	tween_on_start()
 	
 	
-func parallax_start() -> void:
-	parallax1()
-	parallax2()
-	parallax3()
-	parallax4()
-	
-func parallax_stop() -> void:
-	pass #Сделать стейты?
-	
-func parallax1() -> void:
-	parallax_1.autoscroll = Vector2(0.0, 0.0)
+func stop() -> void:
+	tween_on_stop()
 	
 	
-func parallax2() -> void:
-	parallax_2.autoscroll = Vector2(-10.0, 0.0)
+func tween_on_start() -> void:
+	var tween_parallax1: Tween = create_tween()
+	tween_parallax1.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	tween_parallax1.tween_property(parallax_1,"autoscroll",Vector2(0.0, 0.0), 3.0)
+	
+	var tween_parallax2: Tween = create_tween()
+	tween_parallax2.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	tween_parallax2.tween_property(parallax_2,"autoscroll",Vector2(-10.0, 0.0), 3.0)
+	
+	var tween_parallax3: Tween = create_tween()
+	tween_parallax3.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	tween_parallax3.tween_property(parallax_3,"autoscroll",Vector2(-50.0, 0.0), 3.0)
+	
+	var tween_parallax4: Tween = create_tween()
+	tween_parallax4.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	tween_parallax4.tween_property(parallax_4,"autoscroll",Vector2(-130.0, 0.0), 3.0)
 	
 	
-func parallax3() -> void:
-	parallax_3.autoscroll = Vector2(-50.0, 0.0)
+func tween_on_stop() -> void:
+	var tween_parallax1: Tween = create_tween()
+	tween_parallax1.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	tween_parallax1.tween_property(parallax_1,"autoscroll",Vector2(0.0, 0.0), 3.0)
 	
+	var tween_parallax2: Tween = create_tween()
+	tween_parallax2.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	tween_parallax2.tween_property(parallax_2,"autoscroll",Vector2(0.0, 0.0), 3.0)
 	
-func parallax4() -> void:
-	parallax_4.autoscroll = Vector2(-130.0, 0.0)
+	var tween_parallax3: Tween = create_tween()
+	tween_parallax3.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	tween_parallax3.tween_property(parallax_3,"autoscroll",Vector2(0.0, 0.0), 3.0)
+	
+	var tween_parallax4: Tween = create_tween()
+	tween_parallax4.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	tween_parallax4.tween_property(parallax_4,"autoscroll",Vector2(0.0, 0.0), 3.0)
+	
