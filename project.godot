@@ -15,6 +15,10 @@ run/main_scene="uid://dji2rowy7a7a8"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://cj2wkbeiptohj"
 
+[audio]
+
+buses/default_bus_layout="res://Utilities/SoundManager/default_bus_layout.tres"
+
 [autoload]
 
 SoundManager="*res://Utilities/SoundManager/sound_manager.tscn"
@@ -38,5 +42,4 @@ mouse_cursor/custom_image="uid://88h43j7623ho"
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="mobile"

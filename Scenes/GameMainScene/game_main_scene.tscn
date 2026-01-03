@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dji2rowy7a7a8"]
+[gd_scene load_steps=5 format=3 uid="uid://dji2rowy7a7a8"]
 
 [ext_resource type="Script" uid="uid://dgl0nhgatomt6" path="res://Scenes/GameMainScene/game_main_scene.gd" id="1_4hbeh"]
 [ext_resource type="PackedScene" uid="uid://v3cn8qd7goio" path="res://Scenes/All Timers/all_timers_general_scene.tscn" id="2_4pb6x"]
 [ext_resource type="PackedScene" uid="uid://b85ihm0oy3voe" path="res://Scenes/ParallaxBackground/parallax_background.tscn" id="2_ujb81"]
+[ext_resource type="PackedScene" uid="uid://bwqfk8mxoh15r" path="res://Scenes/Particles/Wind/wind.tscn" id="3_5gd7p"]
 
 [node name="game_main_scene" type="Node2D"]
 script = ExtResource("1_4hbeh")
@@ -10,6 +11,10 @@ script = ExtResource("1_4hbeh")
 [node name="parallax_background" parent="." instance=ExtResource("2_ujb81")]
 position = Vector2(960, 540)
 scale = Vector2(3.4, 3.4)
+
+[node name="wind" parent="." instance=ExtResource("3_5gd7p")]
+position = Vector2(1899, 557)
+amount = 10
 
 [node name="all_timers_general_scene" parent="." instance=ExtResource("2_4pb6x")]
 

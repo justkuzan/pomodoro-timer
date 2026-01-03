@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://otb7ihrtlmgi"
+path="res://.godot/imported/Steam ENgine Train.ogg-c420dafcae894bed30dbb208b0c7e1eb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Mechanisms/Steam ENgine Train.ogg"
+dest_files=["res://.godot/imported/Steam ENgine Train.ogg-c420dafcae894bed30dbb208b0c7e1eb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

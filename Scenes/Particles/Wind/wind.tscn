@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwqfk8mxoh15r"]
+
+[sub_resource type="Gradient" id="Gradient_vaf2b"]
+offsets = PackedFloat32Array(0.0036764706, 0.52205884, 1)
+colors = PackedColorArray(0.92156863, 0.94509804, 0.8117647, 0, 0.92156863, 0.94509804, 0.8117647, 0.78431374, 0.92156863, 0.94509804, 0.8117647, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0bbcu"]
+gradient = SubResource("Gradient_vaf2b")
+width = 1
+height = 32
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_cxbh2"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.09411765)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q8h48"]
+gradient = SubResource("Gradient_cxbh2")
+
+[sub_resource type="Gradient" id="Gradient_ggvjd"]
+offsets = PackedFloat32Array(0, 0.5614035, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0u6rb"]
+gradient = SubResource("Gradient_ggvjd")
+
+[sub_resource type="Curve" id="Curve_fk185"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.11811024, 65.89017), 0.0, 0.0, 0, 0, Vector2(0.20078741, -24.958435), 0.0, 0.0, 0, 0, Vector2(0.32677168, 74.54242), 0.0, 0.0, 0, 0, Vector2(0.44094485, -29.284546), 0.0, 0.0, 0, 0, Vector2(0.58661413, 74.54242), 0.0, 0.0, 0, 0, Vector2(0.7047244, -20.632294), 0.0, 0.0, 0, 0, Vector2(0.8149606, 70.21629), 0.0, 0.0, 0, 0, Vector2(0.9212598, -20.632294), 0.0, 0.0, 0, 0, Vector2(1, 22.628937), 0.0, 0.0, 0, 0]
+point_count = 10
+
+[sub_resource type="CurveTexture" id="CurveTexture_x20xv"]
+curve = SubResource("Curve_fk185")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vaf2b"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(-300, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(300, 300, 1)
+gravity = Vector3(-100, 0, 0)
+tangential_accel_min = -2.2351742e-06
+tangential_accel_max = 5.9999976
+tangential_accel_curve = SubResource("CurveTexture_x20xv")
+damping_max = 100.00001
+scale_min = 5.0
+scale_max = 8.0
+color_ramp = SubResource("GradientTexture1D_0u6rb")
+color_initial_ramp = SubResource("GradientTexture1D_q8h48")
+
+[node name="wind" type="GPUParticles2D"]
+amount = 200
+texture = SubResource("GradientTexture2D_0bbcu")
+lifetime = 5.0
+preprocess = 2.0
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_vaf2b")
