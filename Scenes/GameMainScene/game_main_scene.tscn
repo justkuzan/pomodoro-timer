@@ -12,8 +12,10 @@ script = ExtResource("1_4hbeh")
 position = Vector2(960, 540)
 scale = Vector2(3.4, 3.4)
 
-[node name="wind" parent="." instance=ExtResource("3_5gd7p")]
-position = Vector2(1899, 557)
+[node name="particles" type="Node2D" parent="."]
+
+[node name="wind" parent="particles" instance=ExtResource("3_5gd7p")]
+position = Vector2(1816, 533)
 amount = 10
 
 [node name="all_timers_general_scene" parent="." instance=ExtResource("2_4pb6x")]

@@ -31,11 +31,13 @@ func _ready() -> void:
 	
 	
 func play_click_down() -> void:
-	SoundManager.play_track(SoundManager.AUDIO_TRACKS.ui_button_pressed)
+	pass
+	AudioManager.button_pressed()
 	
 	
 func play_click_up() -> void:
-	SoundManager.play_track(SoundManager.AUDIO_TRACKS.ui_button_released)
+	pass
+	AudioManager.button_released()
 	
 	
 func ui_onloaded() -> void:

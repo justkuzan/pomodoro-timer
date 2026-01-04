@@ -10,23 +10,26 @@ func _ready() -> void:
 	
 func _on_all_timers_general_scene_running() -> void:
 	parallax_background.start()
-	SoundManager.running()
+	AudioManager.running()
 	
-
-
+	
+	
 func _on_all_timers_general_scene_paused() -> void:
 	parallax_background.stop()
-	SoundManager.stopped()
-
-
+	AudioManager.paused()
+	
+	
 func _on_all_timers_general_scene_stopped() -> void:
 	parallax_background.stop()
-	SoundManager.stopped()
-
-
+	AudioManager.stopped()
+	
+	
 func _on_all_timers_general_scene_onloaded() -> void:
-	SoundManager.onloaded()
-
-
+	AudioManager.onloaded()
+	
+	
 func _on_all_timers_general_scene_ended() -> void:
 	parallax_background.stop()
+	AudioManager.ended()
+	
+	

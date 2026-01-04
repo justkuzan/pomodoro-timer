@@ -17,11 +17,11 @@ config/icon="uid://cj2wkbeiptohj"
 
 [audio]
 
-buses/default_bus_layout="res://Utilities/SoundManager/default_bus_layout.tres"
+buses/default_bus_layout="res://Utilities/AudioManager/default_bus_layout.tres"
 
 [autoload]
 
-SoundManager="*res://Utilities/SoundManager/sound_manager.tscn"
+AudioManager="*res://Utilities/AudioManager/audio_manager.tscn"
 
 [debug]
 
