@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dji2rowy7a7a8"]
+[gd_scene load_steps=7 format=3 uid="uid://dji2rowy7a7a8"]
 
 [ext_resource type="Script" uid="uid://dgl0nhgatomt6" path="res://Scenes/GameMainScene/game_main_scene.gd" id="1_4hbeh"]
 [ext_resource type="PackedScene" uid="uid://v3cn8qd7goio" path="res://Scenes/All Timers/all_timers_general_scene.tscn" id="2_4pb6x"]
 [ext_resource type="PackedScene" uid="uid://b85ihm0oy3voe" path="res://Scenes/ParallaxBackground/parallax_background.tscn" id="2_ujb81"]
 [ext_resource type="PackedScene" uid="uid://bwqfk8mxoh15r" path="res://Scenes/Particles/Wind/wind.tscn" id="3_5gd7p"]
+[ext_resource type="PackedScene" uid="uid://dhuyf4rs8vm4a" path="res://Scenes/Particles/Leaves/leaves.tscn" id="4_y7q46"]
+[ext_resource type="PackedScene" uid="uid://cslyegwgv1b5h" path="res://UI/general_controls.tscn" id="6_mi2bd"]
 
 [node name="game_main_scene" type="Node2D"]
 script = ExtResource("1_4hbeh")
@@ -17,6 +19,15 @@ scale = Vector2(3.4, 3.4)
 [node name="wind" parent="particles" instance=ExtResource("3_5gd7p")]
 position = Vector2(1816, 533)
 amount = 10
+
+[node name="GPUParticles2D" parent="particles" instance=ExtResource("4_y7q46")]
+visible = false
+position = Vector2(960, 540)
+amount = 10
+
+[node name="general_controls" parent="." instance=ExtResource("6_mi2bd")]
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="all_timers_general_scene" parent="." instance=ExtResource("2_4pb6x")]
 

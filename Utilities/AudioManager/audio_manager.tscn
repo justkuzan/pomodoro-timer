@@ -15,12 +15,12 @@ script = ExtResource("1_ywbxf")
 
 [node name="button_press" type="AudioStreamPlayer" parent="ui"]
 stream = ExtResource("2_lajuc")
-volume_db = 2.0
+volume_db = 3.0
 bus = &"UI"
 
 [node name="button_release" type="AudioStreamPlayer" parent="ui"]
 stream = ExtResource("3_c53po")
-volume_db = 2.0
+volume_db = 3.0
 bus = &"UI"
 
 [node name="main_theme" type="AudioStreamPlayer" parent="."]
@@ -35,7 +35,7 @@ bus = &"Ambient"
 
 [node name="birds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_3i0j5")
-volume_db = -2.0
+volume_db = -4.0
 bus = &"Ambient"
 
 [node name="train_wheels" type="AudioStreamPlayer" parent="."]

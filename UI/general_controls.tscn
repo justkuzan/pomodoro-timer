@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://cslyegwgv1b5h"]
+
+[ext_resource type="Texture2D" uid="uid://ce2kbx6lm7exv" path="res://UI/HUD/Buttons/button-quit/quit-default.png" id="1_0l8tv"]
+[ext_resource type="Texture2D" uid="uid://b1ccpspus2jy1" path="res://UI/HUD/Buttons/button-quit/quit-pressed.png" id="2_w0ert"]
+[ext_resource type="Texture2D" uid="uid://db7ea1rmhthj2" path="res://UI/HUD/Buttons/button-quit/quit-hovered.png" id="3_dg07i"]
+[ext_resource type="Texture2D" uid="uid://dxb4xtbrt0isi" path="res://UI/HUD/Buttons/button-music/music_on-default.png" id="4_kqivs"]
+[ext_resource type="Texture2D" uid="uid://0cxf4rchp7na" path="res://UI/HUD/Buttons/button-music/music_on-pressed.png" id="5_ot526"]
+[ext_resource type="Texture2D" uid="uid://rgoxgpm4615e" path="res://UI/HUD/Buttons/button-music/music_on-hovered.png" id="6_61yti"]
+[ext_resource type="Texture2D" uid="uid://d4nyoljr80wrn" path="res://UI/HUD/Buttons/button-music/music_off-default.png" id="7_0l8tv"]
+[ext_resource type="Texture2D" uid="uid://8w714vbr4b6v" path="res://UI/HUD/Buttons/button-music/music_off-pressed.png" id="8_w0ert"]
+[ext_resource type="Texture2D" uid="uid://6g4eissxhun" path="res://UI/HUD/Buttons/button-music/music_off-hovered.png" id="9_dg07i"]
+
+[node name="general_controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="buttons_V" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_right = 0.97
+offset_top = 72.0
+offset_bottom = 192.0
+grow_horizontal = 2
+
+[node name="buttons_H" type="HBoxContainer" parent="buttons_V"]
+layout_mode = 2
+
+[node name="left_buttons" type="HBoxContainer" parent="buttons_V/buttons_H"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="quit" type="TextureButton" parent="buttons_V/buttons_H/left_buttons"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("1_0l8tv")
+texture_pressed = ExtResource("2_w0ert")
+texture_hover = ExtResource("3_dg07i")
+stretch_mode = 0
+
+[node name="right_buttons" type="HBoxContainer" parent="buttons_V/buttons_H"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="music_on" type="TextureButton" parent="buttons_V/buttons_H/right_buttons"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("4_kqivs")
+texture_pressed = ExtResource("5_ot526")
+texture_hover = ExtResource("6_61yti")
+stretch_mode = 0
+
+[node name="music_off" type="TextureButton" parent="buttons_V/buttons_H/right_buttons"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("7_0l8tv")
+texture_pressed = ExtResource("8_w0ert")
+texture_hover = ExtResource("9_dg07i")
+stretch_mode = 0

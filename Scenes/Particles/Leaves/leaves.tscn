@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhuyf4rs8vm4a"]
+
+[ext_resource type="Texture2D" uid="uid://c7an3mfpvd71x" path="res://Scenes/Particles/Leaves/Graphics/leaves.png" id="1_1yb1y"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fx63v"]
+particles_animation = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_1yb1y"]
+offsets = PackedFloat32Array(0, 0.13157895, 0.5263158, 0.88596493, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fx63v"]
+gradient = SubResource("Gradient_1yb1y")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vbcxv"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(960, 540, 1)
+direction = Vector3(-1, 0, 0)
+spread = 10.0
+initial_velocity_min = 20.0
+initial_velocity_max = 80.0
+angular_velocity_min = -50.000015
+angular_velocity_max = 49.99998
+scale_min = 1.1999999
+scale_max = 1.5999999
+color_ramp = SubResource("GradientTexture1D_fx63v")
+anim_offset_max = 1.0
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_fx63v")
+amount = 100
+texture = ExtResource("1_1yb1y")
+lifetime = 3.0
+visibility_rect = Rect2(-960, -540, 1920, 1080)
+process_material = SubResource("ParticleProcessMaterial_vbcxv")
