@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cslyegwgv1b5h"]
+[gd_scene load_steps=11 format=3 uid="uid://cslyegwgv1b5h"]
 
 [ext_resource type="Texture2D" uid="uid://ce2kbx6lm7exv" path="res://UI/HUD/Buttons/button-quit/quit-default.png" id="1_0l8tv"]
+[ext_resource type="Script" uid="uid://871qxvvdbpwp" path="res://UI/general_controls.gd" id="1_uiiji"]
 [ext_resource type="Texture2D" uid="uid://b1ccpspus2jy1" path="res://UI/HUD/Buttons/button-quit/quit-pressed.png" id="2_w0ert"]
 [ext_resource type="Texture2D" uid="uid://db7ea1rmhthj2" path="res://UI/HUD/Buttons/button-quit/quit-hovered.png" id="3_dg07i"]
 [ext_resource type="Texture2D" uid="uid://dxb4xtbrt0isi" path="res://UI/HUD/Buttons/button-music/music_on-default.png" id="4_kqivs"]
@@ -17,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uiiji")
 
 [node name="buttons_V" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -55,9 +57,14 @@ texture_hover = ExtResource("6_61yti")
 stretch_mode = 0
 
 [node name="music_off" type="TextureButton" parent="buttons_V/buttons_H/right_buttons"]
+visible = false
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 texture_normal = ExtResource("7_0l8tv")
 texture_pressed = ExtResource("8_w0ert")
 texture_hover = ExtResource("9_dg07i")
 stretch_mode = 0
+
+[connection signal="pressed" from="buttons_V/buttons_H/left_buttons/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="buttons_V/buttons_H/right_buttons/music_on" to="." method="_on_music_on_pressed"]
+[connection signal="pressed" from="buttons_V/buttons_H/right_buttons/music_off" to="." method="_on_music_off_pressed"]

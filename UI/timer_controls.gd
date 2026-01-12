@@ -15,7 +15,6 @@ signal minutes_reduced
 
 
 func _ready() -> void:
-	# Collect all buttons into an array for batch setup
 	var all_buttons: Array = [
 		play_button, 
 		pause_button, 
@@ -23,7 +22,6 @@ func _ready() -> void:
 		add_minutes_button, 
 		reduce_minutes_button
 	]
-	
 	
 	for btn: TextureButton in all_buttons:
 		btn.button_down.connect(play_click_down)
