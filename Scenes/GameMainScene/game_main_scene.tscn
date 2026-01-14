@@ -31,6 +31,7 @@ offset_bottom = 1080.0
 
 [node name="all_timers_general_scene" parent="." instance=ExtResource("2_4pb6x")]
 
+[connection signal="quit" from="general_controls" to="." method="_on_general_controls_quit"]
 [connection signal="ended" from="all_timers_general_scene" to="." method="_on_all_timers_general_scene_ended"]
 [connection signal="onloaded" from="all_timers_general_scene" to="." method="_on_all_timers_general_scene_onloaded"]
 [connection signal="paused" from="all_timers_general_scene" to="." method="_on_all_timers_general_scene_paused"]

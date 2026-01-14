@@ -12,8 +12,8 @@ signal music_off
 
 func _ready() -> void:
 	var all_buttons: Array = [
-		quit,
-		music_off,
+		quit_button,
+		music_on_button,
 	]
 	
 	for btn: TextureButton in all_buttons:
@@ -34,6 +34,7 @@ func play_click_up() -> void:
 func ui_misic_on() -> void:
 	music_on_button.show()
 	music_off_button.hide()
+	
 	
 func ui_misic_off() -> void:
 	music_on_button.hide()
