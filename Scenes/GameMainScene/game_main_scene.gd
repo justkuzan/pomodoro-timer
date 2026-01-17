@@ -33,5 +33,15 @@ func _on_all_timers_general_scene_ended() -> void:
 	AudioManager.ended()
 	
 	
+func _on_general_controls_sound_on() -> void:
+	AudioManager.sound_on()
+	
+	
+func _on_general_controls_sound_off() -> void:
+	AudioManager.sound_off()
+	
+	
 func _on_general_controls_quit() -> void:
 	get_tree().quit()
+	
+	

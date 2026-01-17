@@ -24,7 +24,6 @@ func timer_onloaded() -> void:
 	
 func timer_started() -> void:
 	timer.start()
-	trigger_timeout()
 	
 	
 func timer_stopped() -> void:

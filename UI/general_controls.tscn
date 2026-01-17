@@ -48,7 +48,7 @@ stretch_mode = 0
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="music_on" type="TextureButton" parent="buttons_V/buttons_H/right_buttons"]
+[node name="sound_on" type="TextureButton" parent="buttons_V/buttons_H/right_buttons"]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 texture_normal = ExtResource("4_kqivs")
@@ -56,7 +56,7 @@ texture_pressed = ExtResource("5_ot526")
 texture_hover = ExtResource("6_61yti")
 stretch_mode = 0
 
-[node name="music_off" type="TextureButton" parent="buttons_V/buttons_H/right_buttons"]
+[node name="sound_off" type="TextureButton" parent="buttons_V/buttons_H/right_buttons"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
@@ -66,5 +66,5 @@ texture_hover = ExtResource("9_dg07i")
 stretch_mode = 0
 
 [connection signal="pressed" from="buttons_V/buttons_H/left_buttons/quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="buttons_V/buttons_H/right_buttons/music_on" to="." method="_on_music_on_pressed"]
-[connection signal="pressed" from="buttons_V/buttons_H/right_buttons/music_off" to="." method="_on_music_off_pressed"]
+[connection signal="pressed" from="buttons_V/buttons_H/right_buttons/sound_on" to="." method="_on_sound_on_pressed"]
+[connection signal="pressed" from="buttons_V/buttons_H/right_buttons/sound_off" to="." method="_on_sound_off_pressed"]

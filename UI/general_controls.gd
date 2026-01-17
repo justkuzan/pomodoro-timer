@@ -1,19 +1,20 @@
 extends Control
 
 signal quit
-signal music_on
-signal music_off
+signal sound_on
+signal sound_off
 
 
 @onready var quit_button: TextureButton = $buttons_V/buttons_H/left_buttons/quit
-@onready var music_on_button: TextureButton = $buttons_V/buttons_H/right_buttons/music_on
-@onready var music_off_button: TextureButton = $buttons_V/buttons_H/right_buttons/music_off
+@onready var sound_on_button: TextureButton = $buttons_V/buttons_H/right_buttons/sound_on
+@onready var sound_off_button: TextureButton = $buttons_V/buttons_H/right_buttons/sound_off
 
 
 func _ready() -> void:
 	var all_buttons: Array = [
 		quit_button,
-		music_on_button,
+		sound_on_button,
+		sound_off_button,
 	]
 	
 	for btn: TextureButton in all_buttons:
@@ -22,32 +23,26 @@ func _ready() -> void:
 	
 	
 func play_click_down() -> void:
-	pass
 	AudioManager.button_pressed()
 	
 	
 func play_click_up() -> void:
-	pass
 	AudioManager.button_released()
 	
 	
-func ui_misic_on() -> void:
-	music_on_button.show()
-	music_off_button.hide()
-	
-	
-func ui_misic_off() -> void:
-	music_on_button.hide()
-	music_off_button.show()
-
-
 func _on_quit_pressed() -> void:
 	emit_signal("quit")
-
-
-func _on_music_on_pressed() -> void:
-	emit_signal("music_on")
-
-
-func _on_music_off_pressed() -> void:
-	emit_signal("music_off")
+	
+	
+func _on_sound_on_pressed() -> void:
+	sound_on_button.show()
+	sound_off_button.hide()
+	emit_signal("sound_on")
+	
+	
+func _on_sound_off_pressed() -> void:
+	sound_on_button.hide()
+	sound_off_button.show()
+	emit_signal("sound_off")
+	
+	
