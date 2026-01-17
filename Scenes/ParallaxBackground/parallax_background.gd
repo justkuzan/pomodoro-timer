@@ -21,35 +21,35 @@ func stop() -> void:
 func tween_on_start() -> void:
 	var tween_parallax1: Tween = create_tween()
 	tween_parallax1.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
-	tween_parallax1.tween_property(parallax_1,"autoscroll",Vector2(0.0, 0.0), 3.0)
+	tween_parallax1.tween_property(parallax_1,"autoscroll",Vector2(0.0, 0.0), 5.0)
 	
 	var tween_parallax2: Tween = create_tween()
 	tween_parallax2.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
-	tween_parallax2.tween_property(parallax_2,"autoscroll",Vector2(-10.0, 0.0), 3.0)
+	tween_parallax2.tween_property(parallax_2,"autoscroll",Vector2(-60.0, 0.0), 5.0)
 	
 	var tween_parallax3: Tween = create_tween()
 	tween_parallax3.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
-	tween_parallax3.tween_property(parallax_3,"autoscroll",Vector2(-50.0, 0.0), 3.0)
+	tween_parallax3.tween_property(parallax_3,"autoscroll",Vector2(-120.0, 0.0), 5.0)
 	
 	var tween_parallax4: Tween = create_tween()
 	tween_parallax4.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
-	tween_parallax4.tween_property(parallax_4,"autoscroll",Vector2(-130.0, 0.0), 3.0)
+	tween_parallax4.tween_property(parallax_4,"autoscroll",Vector2(-250.0, 0.0), 5.0)
 	
 	
 func tween_on_stop() -> void:
 	var tween_parallax1: Tween = create_tween()
 	tween_parallax1.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
-	tween_parallax1.tween_property(parallax_1,"autoscroll",Vector2(0.0, 0.0), 2.0)
+	tween_parallax1.tween_property(parallax_1,"autoscroll",Vector2(0.0, 0.0), 5.0)
 	
 	var tween_parallax2: Tween = create_tween()
 	tween_parallax2.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
-	tween_parallax2.tween_property(parallax_2,"autoscroll",Vector2(0.0, 0.0), 2.0)
+	tween_parallax2.tween_property(parallax_2,"autoscroll",Vector2(0.0, 0.0), 5.0)
 	
 	var tween_parallax3: Tween = create_tween()
 	tween_parallax3.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
-	tween_parallax3.tween_property(parallax_3,"autoscroll",Vector2(0.0, 0.0), 2.0)
+	tween_parallax3.tween_property(parallax_3,"autoscroll",Vector2(0.0, 0.0), 5.0)
 	
 	var tween_parallax4: Tween = create_tween()
 	tween_parallax4.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
-	tween_parallax4.tween_property(parallax_4,"autoscroll",Vector2(0.0, 0.0), 2.0)
+	tween_parallax4.tween_property(parallax_4,"autoscroll",Vector2(0.0, 0.0), 5.0)
 	

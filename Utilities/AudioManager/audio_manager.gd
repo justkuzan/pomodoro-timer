@@ -12,13 +12,13 @@ func _set_buses_muted(muted: bool) -> void:
 	
 	
 func sound_on() -> void:
-	is_muted = false
-	_set_buses_muted(false)
+	is_muted = true
+	_set_buses_muted(true)
 	
 	
 func sound_off() -> void:
-	is_muted = true
-	_set_buses_muted(true)
+	is_muted = false
+	_set_buses_muted(false)
 	
 	
 func onloaded() -> void:
@@ -28,7 +28,6 @@ func onloaded() -> void:
 	
 	
 func running() -> void:
-	#$main_theme.play() Не надо - уже запущена
 	$wind.play()
 	$birds.stop()
 	#сюда нужен звук гудка
@@ -36,22 +35,19 @@ func running() -> void:
 	
 	
 func stopped() -> void:
-	#$main_theme.play() Не надо - уже запущена
 	$wind.stop()
 	$birds.play()
 	$train_wheels.stop()
 	
 	
 func paused() -> void:
-	#$main_theme.play() Не надо - уже запущена
 	$wind.stop()
 	$birds.play()
-	#сюда нужен звук плавного снижения скорости
+	$train_stopped.play()
 	$train_wheels.stop()
 	
 	
 func ended() -> void:
-	#$main_theme.play() Не надо - уже запущена
 	$wind.stop()
 	$birds.play()
 	#сюда нужен звук плавного снижения скорости

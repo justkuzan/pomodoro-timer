@@ -35,14 +35,14 @@ func _on_quit_pressed() -> void:
 	
 	
 func _on_sound_on_pressed() -> void:
-	sound_on_button.show()
-	sound_off_button.hide()
+	sound_on_button.hide()
+	sound_off_button.show()
 	emit_signal("sound_on")
 	
 	
 func _on_sound_off_pressed() -> void:
-	sound_on_button.hide()
-	sound_off_button.show()
+	sound_on_button.show()
+	sound_off_button.hide()
 	emit_signal("sound_off")
 	
 	

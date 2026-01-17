@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://doj632328jtfu"]
+[gd_scene load_steps=9 format=3 uid="uid://doj632328jtfu"]
 
 [ext_resource type="Script" uid="uid://bmyoqcivxifqp" path="res://Utilities/AudioManager/audio_manager.gd" id="1_ywbxf"]
 [ext_resource type="AudioStream" uid="uid://c6tkxvwqho8xa" path="res://UI/HUD/Sounds/Wood Block1.ogg" id="2_lajuc"]
@@ -6,7 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://ln6y38imeptn" path="res://Assets/Audio/Themes/main_theme.ogg" id="4_5gx3x"]
 [ext_resource type="AudioStream" uid="uid://bnistmquojpua" path="res://Assets/Audio/Ambient/Ambiance_Wind_Calm_Loop_Stereo.ogg" id="5_hymyo"]
 [ext_resource type="AudioStream" uid="uid://dwiei5qmfc8ap" path="res://Assets/Audio/Ambient/Ambiance_Nature_Meadow_Birds_Flies_Calm_Loop_Stereo.ogg" id="6_3i0j5"]
-[ext_resource type="AudioStream" uid="uid://d3q1hc3ea7g5q" path="res://Assets/Audio/Mechanisms/train_wheels.ogg" id="7_47haf"]
+[ext_resource type="AudioStream" uid="uid://kvtkg1gy4rq0" path="res://Assets/Audio/Mechanisms/steam-train-ridinclose.mp3" id="7_lajuc"]
+[ext_resource type="AudioStream" uid="uid://bn80qfl1ba3fy" path="res://Assets/Audio/Mechanisms/train-stopped.mp3" id="8_c53po"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_ywbxf")
@@ -30,15 +31,20 @@ bus = &"Music"
 
 [node name="wind" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_hymyo")
-volume_db = 10.0
+volume_db = 7.0
 bus = &"Ambient"
 
 [node name="birds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_3i0j5")
-volume_db = -4.0
+volume_db = -3.0
 bus = &"Ambient"
 
 [node name="train_wheels" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_47haf")
-volume_db = -7.0
+stream = ExtResource("7_lajuc")
+volume_db = 2.0
+bus = &"FX"
+
+[node name="train_stopped" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_c53po")
+volume_db = -10.0
 bus = &"FX"
